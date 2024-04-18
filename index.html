@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Housing Website</title>
+    <style>
+        body {
+            background-color: #f1f1f1;
+        }
+        
+        header {
+            background-color: #333;
+            padding: 20px;
+            color: #fff;
+        }
+        
+        header h1 {
+            margin: 0;
+        }
+        
+        .btn {
+            margin-right: 10px;
+            padding: 10px;
+            background-color: #4CAF50;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+        }
+        
+        .house-list {
+            margin: 20px;
+        }
+        
+        .house {
+            display: flex;
+            margin-bottom: 20px;
+        }
+        
+        .house img {
+            width: 200px;
+            height: 150px;
+            margin-right: 20px;
+        }
+        
+        footer {
+            background-color: #333;
+            padding: 20px;
+            color: #fff;
+            text-align: center;
+        }
+        
+        form {
+            margin: 20px;
+        }
+        
+        form label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        
+        form input {
+            margin-bottom: 10px;
+            padding: 5px;
+        }
+        
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Housing Website</h1>
+        <button class="btn">Home</button>
+        <button class="btn">Houses List</button>
+        <button class="btn">Buttons</button>
+        <button class="btn" onclick="toggleSignIn()">Sign In</button>
+        <button class="btn" onclick="toggleRegistration()">Register</button>
+    </header>
+    
+    <div class="house-list">
+        <div class="house">
+            <img src="house1.jpg" alt="House 1">
+            <div>
+                <h2>House 1</h2>
+                <p>Beautiful house with 3 bedrooms and 2 bathrooms.</p>
+                <p>Price: $500,000</p>
+                <button class="btn">More Details</button>
+            </div>
+        </div>
+        
+        <div class="house">
+            <img src="house2.jpg" alt="House 2">
+            <div>
+                <h2>House 2</h2>
+                <p>Spacious house with 4 bedrooms and 3 bathrooms.</p>
+                <p>Price: $700,000</p>
+                <button class="btn">More Details</button>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        &copy; 2024 Housing Website. All rights reserved.
+    </footer>
+    
+    <form id="signin-form" class="hidden">
+        <h2>Sign In</h2>
+        <label for="signin-email">Email:</label>
+        <input type="email" id="signin-email" name="signin-email" required>
+        
+        <label for="signin-password">Password:</label>
+        <input type="password" id="signin-password" name="signin-password" required>
+        
+        <button class="btn">Sign In</button>
+    </form>
+    
+    <form id="registration-form" class="hidden">
+        <h2>Registration</h2>
+        <label for="registration-name">Name:</label>
+        <input type="text" id="registration-name" name="registration-name" required>
+        
+        <label for="registration-email">Email:</label>
+        <input type="email" id="registration-email" name="registration-email" required>
+        
+        <label for="registration-password">Password:</label>
+        <input type="password" id="registration-password" name="registration-password" required>
+        
+        <button class="btn">Register</button>
+    </form>
+    
+    <script>
+        function toggleSignIn() {
+            const signInForm = document.getElementById('signin-form');
+            signInForm.classList.toggle('hidden');
+        }
+        
+        function toggleRegistration() {
+            const registrationForm = document.getElementById('registration-form');
+            registrationForm.classList.toggle('hidden');
+        }
+        
+        const signInButton = document.getElementById('signin-form').querySelector('button');
+        signInButton.addEventListener('click', function(event) {
+            event.preventDefault();
+            const email = document.getElementById('signin-email').value;
+            const password = document.getElementById('signin-password').value;
+            // Perform sign-in logic here
+        });
+        
+        const registrationButton = document.getElementById('registration-form').querySelector('button');
+        registrationButton.addEventListener('click', function(event) {
+            event.preventDefault();
+            const name = document.getElementById('registration-name').value;
+            const email = document.getElementById('registration-email').value;
+            const password = document.getElementById('registration-password').value;
+            // Perform registration logic here
+        });
+    </script>
+</body>
+</html>
